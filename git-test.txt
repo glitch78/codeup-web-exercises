@@ -1,0 +1,2 @@
+unstaged git-test.txt
+Getting Git is legit
