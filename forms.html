@@ -1,10 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Register With Us</title>
+    </head>
+    <form method="POST" action="https://request-inspector.glitch.me">
+        <main>
+            <section>
+                <p>
+                    <label for="email">Email</label>
+                    <input type="text" id="email" required name="email" placeholder="E-mail goes here">
+                </p>
+                <p>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required name="password" placeholder="Password goes here">
+                </p>
+                <p>
+                    <label for="bio">Bio</label>
+                    <br>
+                    <textarea></textarea>
+                </p>
+            </section>
+            <h4>How did you hear about us?</h4>
+            <label for="radio">
+                <input type="radio" name="q1" id="radio" value="billboard">Billboard
+            </label>
+            <label for="radio">
+                <input type="radio" name="q1" id="radio" value="radio advertisement">Radio Advertisement
+            </label form="radio">
+            <input type="radio" name="q1" id="radio" value="internet advertisement">Internet Advertisement
+            </label for=radio>
+            <label for="radio">
+                <input type="radio" name="q1" id="radio" value="other">Other
+            </label>
+
+            <h4>What kind of browser have you used?</h4>
+            <label for="browser">Select browser type: </label>
+            <select id="browser" name="browser">
+                <option>chrome</option>
+                <option>Internet Explorer</option>
+                <option>Firefox</option>
+            </select>
+            <p><input type="submit">
+                <button type="reset">Reset</button>
+            </p>
+        </main>
+    </form>
 </html>
