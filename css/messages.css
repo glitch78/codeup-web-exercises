@@ -1,0 +1,55 @@
+body, html {
+    /*height: 100%;*/
+    /*width: 100%;*/
+    margin: 0;
+    font-family: Arial, Ubuntu, sans-serif;
+
+
+}
+
+
+ div {
+    margin: 0 auto;
+     border-color: lightgray;
+     padding:.5em;
+     width: 80%;
+     border-radius:.4em;
+
+
+
+}
+
+
+.one {
+    margin-top: 1em;
+    color: #5555f2;
+    background-color: #99badd;
+
+
+}
+
+
+
+.two {
+    margin-top: 1em;
+    background-color: #91f2d8;
+
+
+
+}
+
+.three{
+    margin-top: 1em;
+    background-color: #edf383;
+
+
+
+}
+
+.four {
+    : 10px;
+    margin-top: 1em;
+    background-color: pink;
+
+}
+
