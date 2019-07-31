@@ -1,0 +1,127 @@
+body {
+    /*display: grid;*/
+    /*grid-template-columns: repeat(3, 1fr);*/
+    /*grid-template-rows: repeat(3, 1fr);*/
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+}
+
+
+.jumbotron {
+    display: grid;
+    position: relative;
+    grid-column: 3/4;
+    grid-row: 1/3;
+}
+
+a:hover {
+    background-color: lightgray;
+}
+
+h1 {
+    position: absolute;
+    top: 4em;
+    width: 67.5%;
+    text-align: center;
+    background-color: white;
+    opacity: 0.6;
+    filter: alpha(opacity=50);
+
+}
+
+.crust-size {
+    background-color: #0083ff;
+    color: white;
+    padding: .6em;
+    margin-top: .5em;
+}
+
+.crust1 {
+    background-color: lightgray;
+}
+
+
+.button1 {
+    background-color: gray;
+    border-radius: 60%;
+    color: white;
+}
+
+.button2 {
+    background-color: gray;
+    border-radius: 60%;
+    color: white;
+}
+
+.button3 {
+    background-color: gray;
+    border-radius: 60%;
+    color: white;
+}
+
+.next-step {
+    background-color: gray;
+}
+
+.sauce {
+    background: #0083ff;
+    padding: .6em;
+    color: white;
+}
+
+
+.form-control {
+    margin-left: .5em;
+}
+
+.sauce-amount {
+    padding: 1em;
+}
+
+.type-sauce {
+    padding: 1em;
+
+}
+
+.cheese-amount {
+    padding: 1em;
+}
+
+.margin1 {
+    margin: 1em;
+}
+
+.card-header1 {
+    margin: 1em
+}
+
+img {
+
+}
+
+.footer1 {
+    background-color: lightgray;
+    text-align: end;
+    padding: 1em;
+
+
+}
+
+.step1 {
+    background-color: #0083ff;
+    padding: .5em;
+    color: white;
+    border-radius: 5%;
+}
+
+.footer2 {
+    text-align: end;
+    background-color: lightgray;
+}
+
+
+
+
