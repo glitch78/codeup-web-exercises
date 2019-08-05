@@ -1,4 +1,72 @@
-.fancy-header {
-    color: purple;
-    text-decoration: underline;
+body,
+html{
+    min-height: 100%;*/
+    font-family: "Comic Sans MS" "Sans-serif";
+
 }
+
+
+.center{
+   text-align: center;
+   color: purple;
+   text-decoration: underline;
+}
+
+.fancy-header {
+    color: deepskyblue;
+    text-decoration: underline;
+
+}
+
+body {
+    background-color: aliceblue;
+    background-image: url("/codeup-web-exercises/img/sky.jpg");
+    background-size: cover ;
+
+
+}
+
+
+.box {
+    text-align: center;
+}
+
+
+ul {
+    list-style-type: upper-roman;
+}
+
+
+td, tr {
+    padding: 5px;
+    font-size: larger;
+    text-align: center;
+    border: 2px solid deepskyblue;
+    margin: auto;
+}
+
+
+.states a:link {
+    color: yellow;
+}
+
+
+.states a:visited {
+    color: black;
+}
+
+
+.states a:hover {
+    color: deepskyblue;
+    font-size: 120%;
+}
+
+
+ .states a:active {
+    color:greenyellow;
+}
+
+ table {
+     box-shadow:;
+     border-radius: ;
+ }

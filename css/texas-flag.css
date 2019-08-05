@@ -1,4 +1,67 @@
-.blue{
-    color: blue;
+.rectangle {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+
+
 }
 
+.blue {
+    height: 300px;
+    width: 140px;
+    background-color: blue;
+    float: left;
+
+
+
+}
+
+.white {
+    width: 400px;
+    height: 150px;
+    background-color: white;
+    float: left;
+
+}
+
+.red {
+    width: 400px;
+    height: 150px;
+    background-color: red;
+}
+
+
+.star {
+    position: relative;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: .9em;
+    margin-right: .9em;
+    margin-bottom: 1.2em;
+    border-right:  .3em solid transparent;
+    border-bottom: .7em  solid white;
+    border-left:   .3em solid transparent;
+    /* Controlls the size of the stars. */
+    font-size: 82px;
+    top: 180px;
+    left: 19px;
+    background: red;
+    float: ;
+}
+.star:before, .star:after {
+    content: ‘’;
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: .6em;
+    left: -1em;
+    border-right:  1em solid transparent;
+    border-bottom: .7em  solid white;
+    border-left:   1em solid transparent;
+    transform: rotate(-35deg);
+}
+.star:after {
+    transform: rotate(35deg);
+}
