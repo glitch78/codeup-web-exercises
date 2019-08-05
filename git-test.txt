@@ -1,4 +1,4 @@
 unstaged git-test.txt
 Getting Git is legit
 another line added
-
+git
