@@ -3,9 +3,9 @@ console.log("Hello from external JavaScript");
 
 alert("Welcome to my website");
 
-prompt("What is your favorite color?");
+var favorite = prompt("What is your favorite color?");
 
-confirm("Cool! That's my favorite color too!");
+confirm("Cool!" + " " + favorite + " " + "is my favorite color too.");
 
 
 
@@ -25,27 +25,23 @@ var herculesTotal = herculesDaysRented * pricePerDay;
 var rentalTotal = mermaidTotal + brotehrBearTotal + herculesTotal;
 console.log( "The video rental total is "  + rentalTotal);
 
-var google, amazon, faceBook, googleHours, amazonHours, faceBookHours, googlePay, amazonPay, faceBookPay, totalPay;
-google = 400;
-amazon = 380;
-faceBook = 350;
-googleHours = 6;
-amazonHours = 4;
-faceBookHours = 10;
 
-googlePay = google * googleHours;
 
-console.log("Google paid me: " + googlePay);
 
-amazonPay = amazon * amazonHours;
-console.log("Amazon paid me: " + amazonPay);
 
-faceBookPay = faceBook * faceBookHours;
-console.log("Facebook paid me: " + faceBookPay);
 
-totalPay = googlePay + amazonPay + faceBookPay;
+var totalGooglePayment = prompt ("how much did google pay you?" );
+alert("Google paid me:" + "" + totalGooglePayment);
 
-console.log("My total pay is: " + totalPay);
+
+var totalAmazonPayment = prompt("Amazon paid me: ");
+alert("Amazon paid me:" + " " + totalAmazonPayment);
+
+var toatalFacebookPayment = prompt("how much did facebook pay you");
+alert("Facebook paid me: " + " " + toatalFacebookPayment);
+
+var totalyCompensation = alert("My total compensation is:" + " "  + toatalFacebookPayment + totalAmazonPayment + totalGooglePayment);
+
 
 var classIsnotFull = true;
 var classIsfull = false;
@@ -62,8 +58,6 @@ var notExpired = true;
 var offerapplied = twoOrMore || notExpired;
 console.log(offerapplied);
 
-var username = 'codeup';
-var password = 'notastrongpassword'
 
 
 
