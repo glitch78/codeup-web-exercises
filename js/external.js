@@ -8,27 +8,37 @@ var favorite = prompt("What is your favorite color?");
 confirm("Cool!" + " " + favorite + " " + "is my favorite color too.");
 
 
-
-var  littleMermaidDaysRented, brotherBearDaysRented, herculesDaysRented, pricePerDay;
-
-littleMermaidDaysRented = 3;
-brotherBearDaysRented = 5;
-herculesDaysRented = 1;
-pricePerDay = 3;
-
-//variables and operators lesson from codeup
-var mermaidTotal = littleMermaidDaysRented * pricePerDay;
-var brotehrBearTotal = brotherBearDaysRented * pricePerDay;
-var herculesTotal = herculesDaysRented * pricePerDay;
+/**************************
+ *Section on video rental
+ */
 
 
-var rentalTotal = mermaidTotal + brotehrBearTotal + herculesTotal;
-console.log( "The video rental total is "  + rentalTotal);
+//Ask about concatenating string in to a number
+
+
+var littleMermaidDaysRented = prompt("How many days did you rent Little Mermaid?");
+alert("I rented it for" + " " + littleMermaidDaysRented);
+
+var brotherBearDaysRented =prompt("How many days did you rent Brother Bear?");
+alert("I rented it for" + " " + brotherBearDaysRented);
+
+var herculesDaysRent = prompt("How many days did you rent Hercules");
+alert("I rented it for" + " " + herculesDaysRent);
+
+var totalDaysRented = (littleMermaidDaysRented + brotherBearDaysRented + herculesDaysRent);
+alert ("The total days rented is:" + " " + totalDaysRented);
+
+var pricePerDay = prompt("What is the price per day to rent a move?");
+alert("The price per day is" + " " + pricePerDay);
+
+var rentalTotal = alert("The total cost is" + pricePerDay * totalDaysRented);
 
 
 
+/*********************
+ * Section on hourly payments
 
-
+ */
 
 var totalGooglePayment = prompt ("how much did google pay you?" );
 alert("Google paid me:" + "" + totalGooglePayment);
