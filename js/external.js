@@ -17,22 +17,24 @@ alert("Cool!" + " " + favoriteColor + " " + "is my favorite color too.");
 
 
 var littleMermaidDaysRented = prompt("How many days did you rent Little Mermaid?");
-alert("I rented it for" + " " + NumberlittleMermaidDaysRented);
+alert("I rented it for" + " " + +littleMermaidDaysRented + " days");
 
 var brotherBearDaysRented = prompt("How many days did you rent Brother Bear?");
-alert("I rented it for" + " " + Number(brotherBearDaysRented));
+alert("I rented it for" + " " + +brotherBearDaysRented + " days");
 
-var herculesDaysRent = prompt("How many days did you rent Hercules");
-alert("I rented it for" + " " + herculesDaysRent);
+var herculesDaysRented = prompt("How many days did you rent Hercules?");
 
-var totalDaysRented = (littleMermaidDaysRented + +brotherBearDaysRented + +herculesDaysRent);
-alert("The total days rented is:" + " " + totalDaysRented);
+alert("I rented it for" + " " + +herculesDaysRented + " days");
+
+var totalDaysRented = (littleMermaidDaysRented + +brotherBearDaysRented + +herculesDaysRented);
+alert("The total days rented is:" + " " + +totalDaysRented + " days");
 
 var pricePerDay = prompt("What is the price per day to rent a move?");
-alert("The price per day is $" + " " + pricePerDay);
+alert("The price per day is $" + " " + +pricePerDay);
 
-var rentalTotal = alert("The total cost is" + +pricePerDay * +totalDaysRented);
+var rentalTotal = (+pricePerDay * +totalDaysRented).toFixed(2);
 
+alert("The total cost was $" + rentalTotal);
 
 /*********************
  * Section on hourly payments
@@ -49,26 +51,26 @@ alert("Amazon paid me:" + " " + totalAmazonPayment);
 var toatalFacebookPayment = prompt("how much did facebook pay you");
 alert("Facebook paid me: " + " " + toatalFacebookPayment);
 
-var totalyCompensation = alert("My total compensation is:" + " " + toatalFacebookPayment) + totalAmazonPayment + Number(totalGooglePayment);
+var totalyCompensation = alert("My total compensation is:" + " " + toatalFacebookPayment + totalAmazonPayment + totalGooglePayment);
 
 /***********************
  * come back to this
  * @type {boolean}
  */
-var classIsnotFull = true;
-var classIsfull = false;
-var noSheduleConflict = true;
+var classIsNotFull = confirm("Class is not full:");
+var classScheduleDoesNotConflict = confirm("Schedules do not conflict:");
 
-var studentEnroll = classIsnotFull && noSheduleConflict;
+var studentEnrolled = classIsNotFull && classScheduleDoesNotConflict;
+
+alert("Student enrolled: " + studentEnrolled);
 
 
-console.log(studentEnroll);
+var numberOfItems = +prompt("How many items for checkout?");
+var offerIsValid = confirm("Offer is valid:");
+var isPremiumMember = confirm("Is premium member:");
 
-var twoOrMore = true;
-var notExpired = true;
+var productDiscountApplied = offerIsValid && (isPremiumMember || numberOfItems > 2);
 
-var offerapplied = twoOrMore || notExpired;
-console.log(offerapplied);
 
 
 
