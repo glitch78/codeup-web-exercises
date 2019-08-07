@@ -10,7 +10,7 @@
  */
 
 function sayHello(name) {
-return "Hello" + " " + name;
+return "Hello" + " " + name + "!";
 }
 
 console.log(sayHello("Bob"));
@@ -37,9 +37,8 @@ console.log(helloMessage);
 
 var myName = "Lance";
 
-sayHello(myName);
+console.log(sayHello(myName));
 
-console.log((myName));
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -103,9 +102,9 @@ console.log(tip);
  * then display the dollar amount they should tip
  */
 
-var customerTip = prompt("How much would you like to tip?");
-console.log("$" + customerTip.toFixed(2));
-alert("A twenty percent tip is encoraged, twenty percent of your bill is: $"  + tip);
+var customerWantsToTip = prompt("How much would you like to tip?");
+console.log("$" + customerWantsToTip);
+alert("A twenty percent tip is encouraged, twenty percent of your bill is: $"  + tip);
 
 
 /**
@@ -123,9 +122,9 @@ alert("A twenty percent tip is encoraged, twenty percent of your bill is: $"  + 
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
 
-function  calculateDiscount(discount) {
-    return   100 * discount;
+function  calculateDiscount(price, discount) {
+    return  price - (price * (discount));
 }
 
-var discountPrice = calculateDiscount(.20).toFixed(2);
+var discountPrice = calculateDiscount( 100, .20).toFixed(2);
 alert( "Your discount is $" + "" + discountPrice);
