@@ -66,7 +66,7 @@ var random = Math.floor((Math.random() * 3) + 1);
  */
 
 function isTwo(number) {
-    return random === 2;
+    return number === 2;
 }
 
 
@@ -88,7 +88,7 @@ console.log(isTwo(random));
 //var bill = 50
 //var tipValue = bill *(tipPercent / 100);
 function calculateTip(tipPercent) {
-    return (50  * tipPercent).toFixed(2);
+    return  (50  * tipPercent).toFixed(2);
 }
 
 var tip = calculateTip (.20);
@@ -104,8 +104,8 @@ console.log(tip);
  */
 
 var customerTip = prompt("How much would you like to tip?");
-console.log(customerTip);
-alert("A twenty percent tip is encoraged, twenty percent of your bill is:" + " " + tip + " " + "dollars");
+console.log("$" + customerTip.toFixed(2));
+alert("A twenty percent tip is encoraged, twenty percent of your bill is: $"  + tip);
 
 
 /**
@@ -123,9 +123,9 @@ alert("A twenty percent tip is encoraged, twenty percent of your bill is:" + " "
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
 
-function calculateDiscount(discount) {
-    return 100 * discount;
+function  calculateDiscount(discount) {
+    return   100 * discount;
 }
 
-var discountPrice = calculateDiscount(.20);
-alert(discountPrice);
+var discountPrice = calculateDiscount(.20).toFixed(2);
+alert( "Your discount is $" + "" + discountPrice);
