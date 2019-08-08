@@ -86,11 +86,11 @@ console.log(isTwo(random));
 //var tipPercent = .20
 //var bill = 50
 //var tipValue = bill *(tipPercent / 100);
-function calculateTip(tipPercent) {
+function calculateTip(totalPrice, tipPercent) {
     return  (50  * tipPercent).toFixed(2);
 }
 
-var tip = calculateTip (.20);
+var tip = calculateTip (50,.20);
 
 console.log(tip);
 
