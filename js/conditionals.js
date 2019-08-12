@@ -17,27 +17,24 @@
  * Can you refactor your code to use functions?
  */
 // var userColor = prompt("Please enter a color");
-var ok = confirm("Would you like to enter a number");
-if (ok) {
-    var number = +prompt("enter a number");
-    if (isNaN(number)) {
-
-
-        alert("This is not a number");
-
-    }
-
-    if (number % 2 === 1) {
-        alert("number is odd");
-
-    } else {
+if (confirm("Would you like to enter a number?")) {
+    var number = parseInt (prompt("enter a number"));
+    if (number % 2 === 0) {
         alert("number is even");
-
+    }else {
+        alert("number is odd");
     }
-    alert(Number(number) + 100);
-    var isPos = Math.sign(number) === 1;
-    var isPosMessage = (isPos) ? "Number is positive": "number is negative"
+    alert(" Sum" + (number + 100));
+    if (number > 0) {
+        alert("number is positive");
+    } else if(number === 0) {
+        alert("number is 0");
+    } else {
+        alert("number is negative");
+    }
 }
+
+
 
 
 
