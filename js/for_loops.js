@@ -49,7 +49,7 @@ showMultiplicationTable(7);
 
 function randomOddEven() {
     for (var i = 1; i <=10; i++) {
-        var number = Math.floor(Math.random() * 180 + 20);
+        var number = Math.floor(Math.random() * 181) + 20;
         if (number % 2 === 0) {
             console.log(number +  " is even ");
         } else {
@@ -59,7 +59,7 @@ function randomOddEven() {
     }
 
 }
-randomOddEven(3);
+randomOddEven();
 
 for(var i = 1; i <= 9; i++){
     var row ="";
@@ -94,9 +94,6 @@ while (number < 1 || 50 < number) {
 }
 
 
-
-
-/*
 for (var i = 1; i <= 50; i = i + 2) {
 
     if (i === number) {
@@ -108,7 +105,9 @@ for (var i = 1; i <= 50; i = i + 2) {
 
 
 
- */
+
+
+
 
 
 
