@@ -5,6 +5,3 @@ while (i < 65536){
     console.log(i);
 }
 
-do {
-
-} while (false);

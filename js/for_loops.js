@@ -6,7 +6,7 @@
 for(let i = 1; i < 13 ; i++){
     for(let j = 1; j < 13 ; j++){
         console.log(`${j} x ${i} = ${j*i}`)
-        7 x 1 = 7
+7 x 1 = 7
 7 x 2 = 14
 7 x 3 = 21
 7 x 4 = 28
@@ -24,9 +24,13 @@ for(let i = 1; i < 13 ; i++){
 
 
 
-
-
-
+function shoowmultiplicationTable(number) {
+    for (var i =1; i <= 10; i++) {
+        console.log(number + " X " + i + " = " + (i * number));
+    }
+}
+shoowmultiplicationTable(7);
+/*
 
 function showMultiplicationTable(number) {
     for (var i = 1; i <=10; i++) {
@@ -37,6 +41,8 @@ function showMultiplicationTable(number) {
 }
 showMultiplicationTable(7);
 
+
+ */
 
 function randomOddEven() {
     for (var i = 1; i <=10; i++) {
