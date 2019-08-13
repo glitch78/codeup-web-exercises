@@ -6,5 +6,5 @@ while (i < 65536){
 }
 
 do {
-    console.log("But what about me?");
+
 } while (false);
