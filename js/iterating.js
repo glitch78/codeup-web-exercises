@@ -63,7 +63,7 @@
 
 var numbers = [1,2,3,4,5];
     function first(number) {
-        return number;
+        return numbers[0];
 
     }
 
@@ -71,7 +71,7 @@ var numbers = [1,2,3,4,5];
 
 
     function second(number) {
-        return number;
+        return numbers[1];
     }
 
     console.log(second(numbers[1]))
@@ -79,7 +79,7 @@ var numbers = [1,2,3,4,5];
 
 
     function last(number) {
-        return number;
+        return numbers[4];
     }
 
     console.log(last(numbers[4]));
