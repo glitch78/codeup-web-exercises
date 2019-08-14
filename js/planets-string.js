@@ -10,7 +10,7 @@
      * planetsArray.
      * console.log planetsArray to check your work
      */
-    var planetsArray = planetsString.split(",");
+     planetsArray = planetsString.split("|");
 
     console.log(planetsArray);
 
@@ -24,7 +24,10 @@
      * list. You will need an opening AND closing <ul> tags around the entire
      * string, and <li> tags around each planet.
      */
-    planetsArray("<br>");
 
-    console.log(planetsArray);
+planetsString = planetsArray.join("<br>");
+    console.log(planetsString);
+    planetsString = "<ul><li>" + planetsArray.join("</li><li>") + "</li></ul>";
+
+    document.write(planetsString);
 })();
