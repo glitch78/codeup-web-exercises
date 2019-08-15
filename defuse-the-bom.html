@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="eng">
 <head>
     <meta charset="utf-8">
     <title>Defuse the BOM</title>
@@ -9,10 +9,14 @@
 <h2 id="message">This BOM will self destruct in <span id="timer">5</span> seconds...</h2>
 <button id="defuser">Defuse the BOM</button>
 
+</body>
+</html>
+
+
 <script>
     (function () {
         "use strict";
-
+// TODO: This function needs to be called once every second
 
         var detonationTimer = 5;
         var interval = 1000;
@@ -23,33 +27,38 @@
                 alert('EXTERMINATE!');
                 document.body.innerHTML = '';
             } else if (detonationTimer > 0) {
+
+
+
+
+
+                /*
+
+                var detonationTimer = 5;
+                var interval = 1000;
+
+                   function updateTimer() {
+                    console.log("hello ceres");
+                    if (detonationTimer == 0) {
+                        alert('EXTERMINATE!');
+                        document.body.innerHTML = '';
+                    } else if (detonationTimer > 0) {
+                        document.getElementById('timer').innerHTML = detonationTimer;
+                    }
+
+
+                    detonationTimer--;
+                }
+
+                console.log(setInterval(updateTimer, interval));
+
+                 */
                 document.getElementById('timer').innerHTML = detonationTimer;
             }
 
 
             detonationTimer--;
         },interval);
-        /*
-        var detonationTimer = 5;
-        var interval = 1000;
-
-        // TODO: This function needs to be called once every second
-           function updateTimer() {
-            console.log("hello ceres");
-            if (detonationTimer == 0) {
-                alert('EXTERMINATE!');
-                document.body.innerHTML = '';
-            } else if (detonationTimer > 0) {
-                document.getElementById('timer').innerHTML = detonationTimer;
-            }
-
-
-            detonationTimer--;
-        }
-
-        console.log(setInterval(updateTimer, interval));
-
-         */
 
         // TODO: When this function runs, it needs to
         // cancel the interval/timeout for updateTimer()
@@ -66,5 +75,3 @@
         defuser.addEventListener('click', defuseTheBOM);
     })();
 </script>
-</body>
-</html>
