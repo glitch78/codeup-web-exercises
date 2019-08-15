@@ -31,7 +31,8 @@
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
     person.sayHello = function (input1, input2) {
-        return " Hello from " + input1 + input2
+        return " Hello from " + input1 + input2;
+        //return "Hello from" + this.firstName + this.lastName;
     };
     console.log(person.sayHello("Lancelot ", "Ellis "));
 
@@ -142,11 +143,11 @@
 
         ];
 
-    console.log(books[0].author.firstName);
+    console.log(books[0].author.lastName);
     console.log(books[1].author.lastName);
-    console.log(books[2].author.firstName);
+    console.log(books[2].author.lastName);
     console.log(books[3].author.lastName);
-    console.log(books[4].author.firstName);
+    console.log(books[4].author.lastName);
 
     /**
      * TODO:
@@ -183,5 +184,18 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+    function createAuthor(firstName, LastName) {
+        return {
+            firstName : firstName,
+            lastName : lastName
+        }
+    }
+
+    function createBook(title, author) {
+        return {
+            title: title,
+            author: author
+        }
+    }
 
 })();
