@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1>Practice Functions</h1>
+<script>
+    //   make a function named isNumeric
+    //it returns if the input is a number or a string
+
+    function isNumeric(input) {
+        if (parseInt(input) || parseFloat(input)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    console.log(isNumeric("hi"));
+
+    // Make a function named isEqual(input1, input2) that returns if both inputs have the same value.
+
+    //  make a function named isEqual
+    //  make sure it has two inputs
+    // it returns if both inputs have the same value
+
+    function isEqual(input1, input2) {
+        if (parseFloat(input1) === parseFloat(input2)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    console.log(isEqual(23, "HI"));
+
+
+    //Make a function named not(input) returns the input with a flipped boolean
+
+    //Make a function named not
+    // it should have an input
+    // it returns the input with a flipped boolean
+
+    function not(input) {
+        return !input;
+    }
+
+    console.log(not(true));
+
+    // Make a function named isOdd(number) that returns true if the number is odd
+    //  make a function named idOdd
+    // it should have an input of number that returns true
+
+    function isOdd(number) {
+        if (parseInt(number) % 2 === 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    console.log(isOdd("5"));
+
+    // Make a function named isEven(number) that returns true if the number is even or zero
+    // make a function named isEven
+    //it should return if  the number is even or zero
+
+    function isEven(number) {
+        if (parseInt(number) % 2 === 0 || 0) {
+            return "The number " + number + " is even"
+        } else {
+            return "The number " + number + " is odd";
+        }
+    }
+
+    console.log(isEven(6));
+
+   // Make a function named isPositive(number) that returns true if the provided input is a positive number. False for zero or any other number or data type.
+   //   make a function named isPositive
+   //   it should have a positive number
+   //   it should return true if  the provided input is a positive number
+   //   it should be false for zero or any other data type
+
+    function isPositive(number) {
+        return   +number > 0;
+    }
+
+    console.log(isPositive(1));
+
+    //Make a function named isNegative(number) that returns true if the provided input is a negative number. False for zero
+    // make a function named isNegative
+    //that returns true if input is a negative number
+
+    function isNegatiive(number) {
+        return  number< 0;
+    }
+
+    console.log(isNegatiive(-2));
+</script>
+</body>
+</html>
