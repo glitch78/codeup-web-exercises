@@ -30,7 +30,9 @@
 
 <div id='map' style='width: 100%; height: 800px;'></div>
 
+<script src="js/mapbox-utils.js"></script>
 <script>
+
     mapboxgl.accessToken = mapboxToken;
     var map = new mapboxgl.Map({
         container: 'map',
@@ -41,12 +43,20 @@
     var marker = new mapboxgl.Marker()
         .setLngLat([-77.0502, 38.8893])
         .addTo(map);
+    popup.addTo(map);
 
     var lincolnPopup = new mapboxgl.Popup()
         .setHTML("<p>Lincoln Memorial!</p>")
         .addTo(map);
 
-    marker.setPopup(lincolnPopup)
+    marker.setPopup(lincolnPopup);
+
+
+
+    geocode("600 Navarro St #350, San Antonio, TX 78205").then(function(result) {
+        console.log(result);
+
+    });
 </script>
 
 
