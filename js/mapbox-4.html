@@ -25,13 +25,23 @@
     });
 
 
+    setTimeout(function () {
+        geocode("Whitefish, Montana ", 'pk.eyJ1IjoiZ2xpdGNoNzgiLCJhIjoiY2p6aWhheWptMTcycjNqcWt4dWVzc2xpNSJ9.AEgpQufRQzISEbB-gyhRyQ').then(function(result) {
+            console.log(result);
+            map.setCenter(result);
+            map.setZoom(10);
+        });
+    });
 
+/*
     geocode("Whitefish, Montana ", 'pk.eyJ1IjoiZ2xpdGNoNzgiLCJhIjoiY2p6aWhheWptMTcycjNqcWt4dWVzc2xpNSJ9.AEgpQufRQzISEbB-gyhRyQ').then(function(result) {
         console.log(result);
         map.setCenter(result);
         map.setZoom(10);
     });
 
+
+ */
 
     reverseGeocode({lng: -157.80601, lat: 21.2620}, 'pk.eyJ1IjoiZ2xpdGNoNzgiLCJhIjoiY2p6aWhheWptMTcycjNqcWt4dWVzc2xpNSJ9.AEgpQufRQzISEbB-gyhRyQ').then(function(results) {
         console.log(results);
