@@ -5,6 +5,66 @@
     <title>Title</title>
 </head>
 <body>
+<script>/*
+    Write a function returnLowestNum that takes in three numbers and returns the lowest of all three.
+    returnLowestNum(2, 1, 3) // 1
+    returnLowestNum(1, 2, 3) // 1
+    returnLowestNum(1, 1, 3) // 1
+    */
 
+    //what is the name of the function
+    // it should have 3 inputs
+    //the data type should be a number
+    //returns lowest the lowest number
+/*
+    function returnLowestNum(num1, num2, num3) {
+        // if num1 is less than num2 & num3 return num1
+        if(num1 < num2 && num1 < num3) {
+            return num1;
+        }
+
+        // if num2 is less than num1 & num3 return num2
+        else if (num2 < num1 && num2 < num3) {
+            return num2;
+        }
+        // else return num3
+
+        else {
+            return num3;
+        }
+    }
+    console.log(returnLowestNum(2,3,1));
+
+ */
+/*
+Write a function containsC that returns true if the input contains the letter c and false otherwise.
+containsC(123) // false
+containsC("abc") // true
+containsC("c") // true
+containsC("123cajs") // true
+
+
+ */
+
+// write a function containsC
+//it should have one input
+// input should return true if it contains the letter c
+// otherwise return a boolean
+
+
+function containsC(input) {
+    //if input.indexOf(c) = a positive number, return true
+   if (input.indexOf("c")>=0) {
+       return true;
+   }
+
+    else {
+        return false;
+   }
+}
+
+console.log(containsC("at"));
+
+</script>
 </body>
 </html>

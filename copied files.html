@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,6 +25,12 @@
 
     // ------------- PRACTICE 1
     //TODO: Write a function, filterNumbers() that takes in an array of mixed data types and returns an array of only the numbers type in ascending order.
+    //1takes in a function ------> filterNumbers
+    //2 accepts an array ------>parameter ------>it's an array- we have to loop
+    //3 mixed data type ------> we need to check to see if this is a number
+    //4 return an array ------> we need an empty array to return
+    //5 ascending order ------>.sort()
+
     var testInput = ["fred", true, 5, 3];
 
     function filterNumbers(arrayOfData) {
@@ -30,18 +40,27 @@
                 console.log(data);
                 newArray.push(data);
             }
-        });
+        })
         return newArray.sort(function (a,b) {
             return newArray.sort()
         });
     }
-    console.log(filterNumbers(testInput));
+    console.log(filterNumbers());
+
+
+
 
 
 
 
     // ------------- PRACTICE 2
     // TODO: Write a function, getOlder() that takes in array of dog objects and increases the value of the age properties by 1.
+
+    //1. write a function named getOlder()
+    //2. takes in an array -->parameter & we have to loop
+    //3. .age + 1
+
+
 
     var dogs = [
         {
@@ -72,11 +91,19 @@
     }
 
     console.log(console.log(getOlder(dogs)));
-
-
-
     // ------------- PRACTICE 3
     //TODO: Write a function, washCars() that takes in a array of car objects and sets the boolean properties of isDirty to false
+    //1. write a function named washCars
+    //2. it takes in an array of car objects ---> parameter & loop
+    //3. .isdirty --> false
+
+    function washCars(arrayOfCars) {
+        arrayOfCars.forEach(function (car) {
+
+        })
+        return arrayOfCars
+    }
+
 
     var cars = [
         {
@@ -99,35 +126,10 @@
         }
     ];
 
-    function washCars(arrayOfCars) {
-        arrayOfCars.forEach(function (car) {
-            car.isDirty = true
-        });
-        return cars
-    }
 
-    console.log(washCars(cars));
+
     // ------------- PRACTICE 4
-    // TODO: Write a function, adminList() that takes in an array of user objects and returns a count of all admins based on the isAdmin property.
-    //  Refactor to return an array of admin-only user emails. Refactor again to return an array of user objects that are admins.
-
-    //1. write a function named is adminList()
-    //2. it takes in an array of admin-only user emails -->parameter & loop
-    //3. we need a counter variable & increase count when isAdmin is true
-    //4. returns count of admin users
-/*
-    function adminList(users) {
-        var counter = 0;
-        users.forEach(function (user) {
-           if (user.isAdmin){
-               counter++
-           }
-
-        });
-        return counter
-    }
-
- */
+    // TODO: Write a function, adminList() that takes in an array of user objects and returns a count of all admins based on the isAdmin property. Refactor to return an array of admin-only user emails. Refactor again to return an array of user objects that are admins.
 
     var users = [
         {
@@ -143,48 +145,11 @@
             email: 'user3@email.com'
         }
     ];
-    console.log(adminList(users));
-
-
-
-function adminList(users) {
-    var adminEmails = [];
-    users.forEach(function (user) {
-        if(user.isAdmin) {
-            adminEmails.push(user.email)
-        }
-
-    });
-    return adminEmails
-}
-
-    console.log(adminList(users));
 
 
     // ------------- PRACTICE 5
-    //TODO: Create a function, makeSandwichObjects() that takes in two array of strings,
-    // breads and fillings and returns an array of sandwichObjects that contain properties for bread and filling and values correspond to the same order of the two         passed in arrays.
-    // Assume the two array inputs are the same length.
+    //TODO: Create a function, makeSandwichObjects() that takes in two array of strings, breads and fillings and returns an array of sandwichObjects that contain properties for bread and filling and values correspond to the same order of the two passed in arrays. Assume the two array inputs are the same length.
 
-    //1. create a function named SandWhichObject()
-    //2. it contains properties for bread and filling ---> 2 parameters
-    //3. values correspond to the same order of the two passed in arrays
-    //4. return an array of object
-    //5. we will need to create the sadwhichobjects --> bread & filling
-
-    function makeSandwichObjects(breads, fillings) {
-        var sandwhichArray = [];
-        for (var i = 0; i < breads.length; i++){
-
-            var sandwhichObject = {};
-            sandwhichObject.bread = breads [i];
-            sandwhichObject.filling = fillings [i];
-            sandwhichArray.push(sandwhichObject)
-        }
-        return sandwhichArray
-    }
-
-    console.log(makeSandwichObjects());
 
     var breads  = [
         "white",

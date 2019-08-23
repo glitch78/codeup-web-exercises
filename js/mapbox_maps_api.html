@@ -2,53 +2,110 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.css' rel='stylesheet' />
+    <title>Mapbox Exercise</title>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+
+        #map {
+            width: 100%;
+            height: 700px;
+        }
+    </style>
 </head>
 <body>
 
-<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.js'></script>
 
-<script src="mapbox-utils.js"></script>
+<div id='map'></div>
 
-<div id='map' style='width: 100%; height: 800px;'></div>
+
+<select id="zoom-level">
+    <option value="5">5</option>
+    <option value="10">10</option>
+    <option value="15" selected>15</option>
+    <option value="20">20</option>
+</select>
+
+
+<script src="js/keys.js"></script>
+
+
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+
+
+<script src="js/mapbox-utils.js"></script>
+
+
 <script>
-/*
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZ2xpdGNoNzgiLCJhIjoiY2p6aWhheWptMTcycjNqcWt4dWVzc2xpNSJ9.AEgpQufRQzISEbB-gyhRyQ';
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v9',
-        zoom: 10,
-        center: [-98.4916, 29.4252]
+
+    var searchPlace = 'San Antonio';
+
+    var select = document.querySelector('#zoom-level');
+
+    var restaurants = [
+        {
+            name: 'Silo',
+            address: 'Silo: Elevated Cuisine, San Antonio, TX',
+            message: 'It\'s great!'
+        },
+        {
+            name: 'Chama Gaucha Steakhouse',
+            address: 'Chama Gaucha Steakhouse, San Antonio, TX',
+            message: 'Too good!'
+        },
+        {
+            name: 'Tarka Indian Kitchen',
+            address: 'Tarka Indian Kitchen, San Antonio, TX',
+            message: 'Awesome!'
+        }
+    ];
+
+    function placeAllMarkers(restaurants, map) {
+        restaurants.forEach(function(restaurant) {
+            placeMarker(restaurant, map);
+        });
+    }
+
+    function placeMarker(restaurantObject, map) {
+        return geocode(restaurantObject.address, mapboxToken).then(function(coordinates) {
+            var popup = new mapboxgl.Popup()
+                .setHTML('<h3>' + restaurantObject.name + '</h3><p>' + restaurantObject.message + '</p>');
+            new mapboxgl.Marker()
+                .setLngLat(coordinates)
+                .setPopup(popup)
+                .addTo(map);
+        });
+    }
+
+    function drawMap(location) {
+        return map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v9',
+            zoom: 10,
+            center: location
+        });
+    }
+
+    function addSelectEventListener(map) {
+        select.addEventListener('change', function() {
+            map.setZoom(select.value);
+        });
+    }
+
+    function resetMapOverMarkers(map, restaurants) {
+        geocode(restaurants[1].address, mapboxToken).then(function(results) {
+            map.setZoom(15);
+            map.setCenter(results);
+        });
+    }
+
+    mapboxgl.accessToken = mapboxToken;
+
+    geocode(searchPlace, mapboxToken).then(function(results) {
+        var map = drawMap(results);
+        addSelectEventListener(map);
+        placeAllMarkers(restaurants, map);
+        resetMapOverMarkers(map, restaurants);
     });
-    */
-
-   // var restaurants = [geocode("2619 McKinney Ave Suite 150, Dallas, TX 75204", 'pk.eyJ1IjoiZ2xpdGNoNzgiLCJhIjoiY2p6aWhheWptMTcycjNqcWt4dWVzc2xpNSJ9.AEgpQufRQzISEbB-gyhRyQ'),
-     //   [geocode("2619 McKinney Ave Suite 150, Dallas, TX 75204", 'pk.eyJ1IjoiZ2xpdGNoNzgiLCJhIjoiY2p6aWhheWptMTcycjNqcWt4dWVzc2xpNSJ9.AEgpQufRQzISEbB-gyhRyQ'),
-          //  geocode("300 Reunion Blvd E, Dallas, TX 75207",'pk.eyJ1IjoiZ2xpdGNoNzgiLCJhIjoiY2p6aWhheWptMTcycjNqcWt4dWVzc2xpNSJ9.AEgpQufRQzISEbB-gyhRyQ')]];
-
-
-var restaurants =
-
-    restaurants.forEach(function(restaurant, index) {
-        return restaurant[1];
-    })
-
-
-/*
-var delay = 5000;
-    setTimeout(function () {
-        geocode("2619 McKinney Ave Suite 150, Dallas, TX 75204 ", 'pk.eyJ1IjoiZ2xpdGNoNzgiLCJhIjoiY2p6aWhheWptMTcycjNqcWt4dWVzc2xpNSJ9.AEgpQufRQzISEbB-gyhRyQ').then(function(result) {
-            console.log(result);
-            map.setCenter(result);
-            map.setZoom(13);
-        },delay);
-    });
-
-    geocode(" 300 Reunion Blvd E, Dallas, TX 75207",'pk.eyJ1IjoiZ2xpdGNoNzgiLCJhIjoiY2p6aWhheWptMTcycjNqcWt4dWVzc2xpNSJ9.AEgpQufRQzISEbB-gyhRyQ' )
-
-
- */
 </script>
 
 </body>
