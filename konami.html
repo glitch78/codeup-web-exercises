@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+</head>
+<body>
+<h1>Konami Code</h1>
+
+<script src="js/jquery.js"></script>
+<script>
+    "use strict";
+    var globalPattern = [38, 38, 40, 40, 37, 39, 37, 39,66,65,13];
+    var currentIndex = 0;
+
+    $(document).keyup(function(event){
+        console.log(event.keyCode);
+        checkPattern(event.keyCode);
+        thirtyLives();
+    });
+
+    function checkPattern(keyCode) {
+        var neededKey = globalPattern[currentIndex];
+        if(keyCode === neededKey) {
+            currentIndex++;
+        } else {
+            currentIndex = 0;
+        }
+        console.log( "needed key: " + neededKey);
+        console.log( "key pressed: " + keyCode);
+        console.log( "index after comparison: " + currentIndex);
+    }
+
+    function thirtyLives() {
+        if(currentIndex === globalPattern.length) {
+            $("body").css("background-color", "blue");
+            $("h1").css("color", "white");
+            var audio = new Audio("contra.mp3");
+            audio.play();
+            $("img").css("background", "img/contra_cover");
+            alert("You've add 30 lives!")
+        }
+    }
+
+
+</script>
+</body>
+</html>
