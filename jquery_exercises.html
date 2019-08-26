@@ -9,7 +9,7 @@
 <!--<script src="js/jquery-2.2.4.js"></script>-->
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
-<hi class = "codeup" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dolorum iste magni minima obcaecati quas ratione reiciendis veritatis? Ab accusantium alias, fuga maxime neque nostrum nulla porro rem similique vero.</hi>
+<h1 class = "codeup" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dolorum iste magni minima obcaecati quas ratione reiciendis veritatis? Ab accusantium alias, fuga maxime neque nostrum nulla porro rem similique vero.</h1>
 <p class="lorem2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus consequuntur dolores explicabo hic molestiae non odit optio similique totam velit! Accusamus accusantium aut dolore eveniet itaque nisi quos sint! Libero?</p>
 <ul class = "codeup">
     <li>1</li>
@@ -17,7 +17,8 @@
     <li>3</li>
 
 </ul>
-<div class="codeup">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi culpa cum debitis dolorem dolorum ipsam laboriosam nam odio officia omnis quasi quidem quo repudiandae, sint, ut vel velit vero voluptas? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci assumenda dignissimos ducimus earum facilis, iure iusto laborum nam placeat possimus quas, quisquam repellendus saepe sed, sint suscipit veritatis? Dignissimos, quia.</div>
+<h3>Jquery Project</h3>
+<div id="codeup" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi culpa cum debitis dolorem dolorum ipsam laboriosam nam odio officia omnis quasi quidem quo repudiandae, sint, ut vel velit vero voluptas? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci assumenda dignissimos ducimus earum facilis, iure iusto laborum nam placeat possimus quas, quisquam repellendus saepe sed, sint suscipit veritatis? Dignissimos, quia.</div>
 <script>
     // window.onload = function() {
     //     alert( 'The page has finished loading!' );
@@ -29,7 +30,37 @@
       //alert(contents);
        // var contents = $("#lorem-div").html();
         //alert(contents);
-        $('.codeup').css('border', '1px solid red');
+        //$('.codeup').css('border', '1px solid red');
+        //$("li").css("font-size", "20px");
+       // $("li, p, h1").css("background-color", "yellow");
+       // var contents = $("h1").html();
+        //alert(contents);
+
+        
+        $("h1").click(function () {
+            $(this).css("background-color", "red");
+        });
+        $("p").dblclick(function () {
+            $(this).css("font-size", "18px")
+        });
+        $("li").hover(function () {
+            $(this).css("color", "red")
+        },
+            function () {
+            $(this).css("color", 'black')
+            }
+        );
+        $("#codeup").click(function () {
+            $(this).html("Testing, 1,2,3!");
+        })
+
+        $("h3").hover(function () {
+            $(this).css("color","firebrick")
+        },
+          function () {
+            $(this).css("color", "black")
+          }
+        )
 
     });
 </script>
