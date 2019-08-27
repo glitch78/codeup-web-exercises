@@ -4,14 +4,27 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
+        .invisible {
+            visibility: hidden;
+        }
 
-    /* dt {*/
-    /*     background-color: #FF0;*/
-    /*}*/
-
+        .show {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
     </style>
 </head>
 <body>
+<div>
+    <h1 id="newsletter">Would you like to sign up for our newsletter</h1>
+    <span id="disappear">X</span>
+</div>
 <script src="js/jquery.js"></script>
 
 <h1 id="question">10 Frequently asked questions about national parks</h1>
@@ -39,30 +52,31 @@
 
 </dl>
 
-<!--<h3 id="">Zion National Park</h3>-->
-<!--<ul id="national-parks">-->
-<!--    <li>Has 2,000 foot sandstone cliffs</li>-->
-<!--    <li>Guided horseback trips are available</li>-->
-<!--    <li>In summer, temperatures in Zion National Park can exceed 100°F</li>-->
-<!--    <li>Winters in Zion National Park are often cold and regularly wet</li>-->
-<!--</ul>-->
-<!--<h3>OLYMPIC NATIONAL PARK</h3>-->
-<!--<ul id="">-->
-<!--    <li>Earned the  designation of national park in 1938.</li>-->
-<!--    <li>IT'S HOME TO ONE OF THE FEW TEMPERATE RAIN FORESTS IN THE WORLD.</li>-->
-<!--    <li>UNUSUAL WEATHER SPARKED A RAIN FOREST FIRE IN 2015.</li>-->
-<!--    <li>HURRICANE RIDGE IS A POPULAR DESTINATION YEAR-ROUND.</li>-->
+<h3>Zion National Park</h3>
+<ul id="national-parks">
+    <li>Has 2,000 foot sandstone cliffs</li>
+    <li>Guided horseback trips are available</li>
+    <li>In summer, temperatures in Zion National Park can exceed 100°F</li>
+    <li>Winters in Zion National Park are often cold and regularly wet</li>
+</ul>
+<h3>OLYMPIC NATIONAL PARK</h3>
+<ul id="">
+    <li>Earned the  designation of national park in 1938.</li>
+    <li>IT'S HOME TO ONE OF THE FEW TEMPERATE RAIN FORESTS IN THE WORLD.</li>
+    <li>UNUSUAL WEATHER SPARKED A RAIN FOREST FIRE IN 2015.</li>
+    <li>HURRICANE RIDGE IS A POPULAR DESTINATION YEAR-ROUND.</li>
 
-<!--</ul>-->
+</ul>
 
-<!--<h3>HARPERS FERRY NATIONAL HISTORICAL PARK</h3>-->
-<!--<ul id="">-->
-<!--    <li>Harpers Ferry National Historical Park has land in three states including West Virginia, Maryland, and Virginia.</li>-->
-<!--    <li>Outdoor activities for visitors to the park include white water rafting, boating, fishing, canoeing, hiking, and sightseeing.</li>-->
-<!--    <li>The park serves as a growing region for many rare plant species due to its position where the two rivers meet.</li>-->
-<!--    <li>Robert Harper's original home is still standing. It is located in the park's lower region and is the oldest building in the park today.</li>-->
+<h3>HARPERS FERRY NATIONAL HISTORICAL PARK</h3>
+<ul class="select">
+    <li>Harpers Ferry National Historical Park has land in three states including West Virginia, Maryland, and Virginia.</li>
+    <li>Outdoor activities for visitors to the park include white water rafting, boating, fishing, canoeing, hiking, and sightseeing.</li>
+    <li>The park serves as a growing region for many rare plant species due to its position where the two rivers meet.</li>
+    <li>Robert Harper's original home is still standing. It is located in the park's lower region and is the oldest building in the park today.</li>
+</ul>
 
-<!--</ul>-->
+    <button id="styler">Click Me</button>
 
 <script>
     "use strict";
@@ -74,26 +88,35 @@
             $('.invisible').toggle()
         });
 
+
         $("dt").click(function () {
             $(this).css({
                 "background-color": " #FF0"
             })
-        })
+        });
 
-    //     $("dt").click(function() {
-    //         if ($('body').hasClass(".invisible")) {
-    //             $(this).css({
-    //                 "background-color": " #FF0",
-    //                 "text-decoration": "underline"
-    //             })
-    //         } else {
-    //             $(this).css({
-    //                 "background-color": " #FF0"
-    //             })
-    //         }
-    //     });
+
+        $("#styler").click(function () {
+            $("ul").each(function () {
+            $('li').click(function() {
+                $(this).parent().children().last().css('color', 'yellow');
+            })
+            });
+
+        $('h3').click(function() {
+            $(this).next().css('font-weight','bold');
+        });
+        $('li').click(function() {
+            $(this).parent().children().first().css('color', 'blue');
+        });
+
+        //jquery effects
+        $('#disappear').click(function() {
+            $('#newsletter').hide();
+        })
      });
 
+})
 
 
 
