@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+</head>
+<body>
+<h1>Contra Practice</h1>
+
+<script src="js/jquery.js"></script>
+<script>
+    "use strict";
+
+
+    var konamiCode = [38, 38, 40, 40, 37, 39, 37, 39,66,65,13];
+    var codePosition = 0;
+
+    $(document).keyup(function(event){
+        console.log(event.keyCode);
+
+        checkPattern(event.keyCode);
+        thirtyLives();
+
+    });
+
+    function checkPattern(keyCode) {
+        var requiredKey = konamiCode[codePosition];
+        if(keyCode === requiredKey) {
+            codePosition++;
+        } else {
+            codePosition = 0;
+        }
+    }
+
+    function thirtyLives() {
+        if(codePosition === konamiCode.length) {
+            $("body").css("background-color", "blue");
+            alert("you have added 30 lives")
+        }
+
+    }
+/*
+    var konami1 = [];
+
+    $(document).keyup(function(event) {
+
+        console.log(event.which);
+
+        konami1.push(event.which);
+
+        var konami = '38,38,40,40,37,39,37,39,66,65';
+        if (konami1.toString().indexOf(konami) >= 0){
+            konami1 = [];
+            // $('h1').html('YOU HAVE 30 LIVES. CHEATER');
+            $('body').css('background-image', 'url("img/kennygif.gif")').css('background-size', 'cover');
+        }
+
+    });
+
+ */
+
+
+</script>
+</body>
+</html>

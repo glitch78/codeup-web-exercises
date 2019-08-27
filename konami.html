@@ -4,8 +4,8 @@
     <title>Konami Code</title>
 </head>
 <body>
-<h1>Konami Code</h1>
-
+<h1 class="center">CONTRA!!!</h1>
+<div id="contra"></div>
 <script src="js/jquery.js"></script>
 <script>
     "use strict";
@@ -22,6 +22,7 @@
         var neededKey = globalPattern[currentIndex];
         if(keyCode === neededKey) {
             currentIndex++;
+
         } else {
             currentIndex = 0;
         }
@@ -32,19 +33,16 @@
 
     function thirtyLives() {
         if(currentIndex === globalPattern.length) {
-            $("body").css("background-color", "blue");
-            $("h1").css("color", "white");
+            $("body").css("background-image", "url('https://i.gifer.com/8Cfd.gif')");
+           $("h1").css("color", "white");
             var audio = new Audio("contra.mp3");
             audio.play();
-
             alert("You've add 30 lives!")
         }
     }
-    $("img").load(function () {
 
-    })
 
 </script>
-<img src="img/contra.jpg" alt="contra" height="800">
+<!--<img src="img/contra.jpg" alt="contra" height="800">-->
 </body>
 </html>
