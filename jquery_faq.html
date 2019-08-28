@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Jquery/Faq</title>
     <style>
 
 
@@ -87,7 +87,7 @@
     <li>Robert Harper's original home is still standing. It is located in the park's lower region and is the oldest building in the park today.</li>
 </ul>
 
-    <button id="styler">Click Me</button>
+    <button id="styler" type="submit">Click Me</button>
 
 <script>
     "use strict";
@@ -109,12 +109,15 @@
             })
         });
 
-
-
+        $("#styler").click(function () {
             $("ul").each(function () {
-            $('li').click(function() {
-                $(this).parent().children().last().css('color', 'yellow');
-            });
+                $('li').click(function() {
+                    $(this).parent().children().last().css('color', 'yellow');
+                });
+        });
+
+
+
 
         $('h3').click(function() {
             $(this).next().css('font-weight','bold');
