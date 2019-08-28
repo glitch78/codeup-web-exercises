@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        .invisible {
-            visibility: hidden;
-        }
+
 
         .show {
             background-color: #4CAF50;
@@ -18,9 +16,18 @@
             display: inline-block;
             font-size: 16px;
         }
+
+        ul {
+            display: none;
+        }
+
+        #join{
+            display: none;
+        }
     </style>
 </head>
 <body>
+<h2 id="join">Please Register for our site</h2>
 <div>
     <h1 id="newsletter">Would you like to sign up for our newsletter</h1>
     <span id="disappear">X</span>
@@ -28,7 +35,7 @@
 <script src="js/jquery.js"></script>
 
 <h1 id="question">10 Frequently asked questions about national parks</h1>
-<dl>
+<dl id="dl-disappear">
     <dt>How many employees are in the National Park Service?</dt>
     <dd class="invisible">blah blah</dd>
     <dt>What is the origin of the National Park Service arrowhead?</dt>
@@ -53,14 +60,14 @@
 </dl>
 
 <h3>Zion National Park</h3>
-<ul id="national-parks">
+<ul>
     <li>Has 2,000 foot sandstone cliffs</li>
     <li>Guided horseback trips are available</li>
     <li>In summer, temperatures in Zion National Park can exceed 100°F</li>
     <li>Winters in Zion National Park are often cold and regularly wet</li>
 </ul>
 <h3>OLYMPIC NATIONAL PARK</h3>
-<ul id="">
+<ul>
     <li>Earned the  designation of national park in 1938.</li>
     <li>IT'S HOME TO ONE OF THE FEW TEMPERATE RAIN FORESTS IN THE WORLD.</li>
     <li>UNUSUAL WEATHER SPARKED A RAIN FOREST FIRE IN 2015.</li>
@@ -69,7 +76,7 @@
 </ul>
 
 <h3>HARPERS FERRY NATIONAL HISTORICAL PARK</h3>
-<ul class="select">
+<ul>
     <li>Harpers Ferry National Historical Park has land in three states including West Virginia, Maryland, and Virginia.</li>
     <li>Outdoor activities for visitors to the park include white water rafting, boating, fishing, canoeing, hiking, and sightseeing.</li>
     <li>The park serves as a growing region for many rare plant species due to its position where the two rivers meet.</li>
@@ -82,7 +89,10 @@
     "use strict";
 
     $(document).ready(function() {
-         $(".invisible").css("visibility", "hidden");
+        $("dd").click(function () {
+            $(".invisible").css("visibility", "hidden");
+        });
+
 
          $("#question").click(function () {
             $('.invisible').toggle()
@@ -96,11 +106,10 @@
         });
 
 
-        $("#styler").click(function () {
+
             $("ul").each(function () {
             $('li').click(function() {
                 $(this).parent().children().last().css('color', 'yellow');
-            })
             });
 
         $('h3').click(function() {
@@ -115,9 +124,16 @@
             $('#newsletter').hide();
         })
      });
+        $(function () {
+            $("h3").click(function () {
+                $("ul").slideToggle(2000);
+            })
+        })
+    });
 
-})
-
+    $(function () {
+        $("#join").delay(8000).fadeIn(500).delay(3000).fadeOut(500);
+    });
 
 
 </script>
