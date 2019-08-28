@@ -63,7 +63,39 @@ function containsC(input) {
    }
 }
 
-console.log(containsC("at"));
+//console.log(containsC("at"));
+
+
+// Exercise 71
+// Write a function definition named hasEvens that takes in sequence of numbers and returns true if there are any even numbers in the sequence
+//1. write a function named has evens
+//2 takes in an array of numbers
+//3.returns true if even number in the array
+
+// function hasEvens(arrayOfNumbers){
+//     var returnValue;
+//     arrayOfNumbers.forEach(function(num){
+//         if(num % 2 === 0){
+//             console.log(num);
+//             returnValue = true;
+//         }
+//     });
+//     return returnValue
+// }
+
+function hasEvens(arrayOfNumbers){
+   for(var i = 0; i < arrayOfNumbers.length; i++){
+       if(arrayOfNumbers[i] % 2 === 0){
+            return  true;
+        }
+   }
+}
+
+
+console.log(hasEvens([1,2,3]))
+
+
+
 
 </script>
 </body>
