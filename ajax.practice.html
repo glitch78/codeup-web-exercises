@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax practice</title>
+
+</head>
+<body>
+<script src="js/jquery.js"></script>
+
+<script>
+
+    //GET Request and POST Request to HookBin with options object
+    // var settings = {
+    //     data: {
+    //         q: "Silly Cats",
+    //         order: "random",
+    //         limit: 10
+    //     }
+    // };
+    //
+    // $.ajax('https://hookb.in/G9rR0KyONxi1m1eBMKDm', settings).done(function(data) {
+    //     console.log(data);
+    // });
+
+var settings = {
+    method: "Post",
+    password: {
+        username: "Lancelot",
+        password: "nunya"
+    }
+};
+    $.ajax('https://hookb.in/G9rR0KyONxi1m1eBMKDm', settings).done(function (data) {
+        console.log(data);
+    });
+
+
+
+    //
+    // $.ajax("https://hookb.in/G9rR0KyONxi1m1eBMKDm",settings).done(function (data) {
+    //     console.log(data);
+    // });
+ // $.ajax("https://swapi.co/api/films").done(function (data) {
+ //    console.log(data.results[2]);
+ // })
+</script>
+</body>
+</html>

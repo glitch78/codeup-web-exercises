@@ -21,7 +21,7 @@
             display: none;
         }
 
-        #join{
+        #join {
             background-color: blue;
             color: white;
             text-align: center;
@@ -46,18 +46,18 @@
     <dd class="invisible">blah blah</dd>
     <dt>How old is the National Park System?</dt>
     <dd class="invisible">blah blah</dd>
-    <dt >How many areas are in the National Park System?</dt>
+    <dt>How many areas are in the National Park System?</dt>
     <dd class="invisible">blah blah</dd>
-    <dt >Who is the director of the National Park Service?</dt>
+    <dt>Who is the director of the National Park Service?</dt>
     <dd class="invisible">blah blah</dd>
-    <dt >How many people visit the national parks?</dt>
+    <dt>How many people visit the national parks?</dt>
     <dd class="invisible">blah blah</dd>
     <dt>What is the most-visited national park?</dt>
     <dd class="invisible">blah blah</dd>
     <dt>What is the National Park Service budget?</dt>
     <dd class="invisible">blah blah</dd>
     <dt>How do I obtain a park entrance pass?</dt>
-    <dd class="invisible">blah blah </dd>
+    <dd class="invisible">blah blah</dd>
     <dt>Where can I find a park map?</dt>
     <dd class="invisible">blah blah</dd>
 
@@ -72,7 +72,7 @@
 </ul>
 <h3>OLYMPIC NATIONAL PARK</h3>
 <ul>
-    <li>Earned the  designation of national park in 1938.</li>
+    <li>Earned the designation of national park in 1938.</li>
     <li>IT'S HOME TO ONE OF THE FEW TEMPERATE RAIN FORESTS IN THE WORLD.</li>
     <li>UNUSUAL WEATHER SPARKED A RAIN FOREST FIRE IN 2015.</li>
     <li>HURRICANE RIDGE IS A POPULAR DESTINATION YEAR-ROUND.</li>
@@ -81,24 +81,31 @@
 
 <h3>HARPERS FERRY NATIONAL HISTORICAL PARK</h3>
 <ul>
-    <li>Harpers Ferry National Historical Park has land in three states including West Virginia, Maryland, and Virginia.</li>
-    <li>Outdoor activities for visitors to the park include white water rafting, boating, fishing, canoeing, hiking, and sightseeing.</li>
-    <li>The park serves as a growing region for many rare plant species due to its position where the two rivers meet.</li>
-    <li>Robert Harper's original home is still standing. It is located in the park's lower region and is the oldest building in the park today.</li>
+    <li>Harpers Ferry National Historical Park has land in three states including West Virginia, Maryland, and
+        Virginia.
+    </li>
+    <li>Outdoor activities for visitors to the park include white water rafting, boating, fishing, canoeing, hiking, and
+        sightseeing.
+    </li>
+    <li>The park serves as a growing region for many rare plant species due to its position where the two rivers meet.
+    </li>
+    <li>Robert Harper's original home is still standing. It is located in the park's lower region and is the oldest
+        building in the park today.
+    </li>
 </ul>
 
-    <button id="styler" type="submit">Click Me</button>
+<button id="styler" type="submit">Click Me</button>
 
 <script>
     "use strict";
 
-    $(document).ready(function() {
+    $(document).ready(function () {
         $("dd").click(function () {
             $(".invisible").css("visibility", "hidden");
         });
 
 
-         $("#question").click(function () {
+        $("#question").click(function () {
             $('.invisible').toggle()
         });
 
@@ -109,31 +116,32 @@
             })
         });
 
-        $("#styler").click(function () {
+
+        $('h3').click(function () {
+            $(this).next().css('font-weight', 'bold');
+
             $("ul").each(function () {
-                $('li').click(function() {
+                $('li').click(function () {
                     $(this).parent().children().last().css('color', 'yellow');
                 });
+                $('li').click(function () {
+                    $(this).parent().children().first().css('color', 'blue');
+                });
+
+            });
+
+            //jquery effects
+
+            $('#disappear').click(function () {
+                $('#newsletter').hide();
+            })
         });
 
 
-
-
-        $('h3').click(function() {
-            $(this).next().css('font-weight','bold');
-        });
-        $('li').click(function() {
-            $(this).parent().children().first().css('color', 'blue');
-        });
-
-        //jquery effects
-        $('#disappear').click(function() {
-            $('#newsletter').hide();
-        })
-     });
         $(function () {
             $("h3").click(function () {
-                $("ul").slideToggle(2000);
+                // $("ul").slideToggle(2000);
+                $(this).next().slideToggle(2000);
             })
         })
     });

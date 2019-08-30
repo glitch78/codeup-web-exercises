@@ -5,7 +5,41 @@
     <title>Title</title>
 </head>
 <body>
-<script>/*
+<script src="js/jquery.js"></script>
+<ul>
+    <li>123</li>
+    <li>123</li>
+    <li>123</li>
+    <li>123</li>
+</ul>
+<ul>
+    <li>123</li>
+    <li>123</li>
+    <li>123</li>
+    <li>123</li>
+</ul>
+<ul>
+    <li>123</li>
+    <li>123</li>
+    <li>123</li>
+    <li>123</li>
+</ul>
+
+<button id="button">Click Me</button>
+
+<script>
+
+    $("#button").click(function () {
+       // $("ul").first().next().css("background-color","blue");
+
+    });
+
+var num = 555;
+    $("ul").each(function () {
+        $(this).append("<li>"+ num +"</li>" )
+    });
+
+    /*
     Write a function returnLowestNum that takes in three numbers and returns the lowest of all three.
     returnLowestNum(2, 1, 3) // 1
     returnLowestNum(1, 2, 3) // 1
@@ -83,19 +117,17 @@ function containsC(input) {
 //     return returnValue
 // }
 
-function hasEvens(arrayOfNumbers){
-   for(var i = 0; i < arrayOfNumbers.length; i++){
-       if(arrayOfNumbers[i] % 2 === 0){
-            return  true;
-        }
-   }
-}
+//
 
-
-console.log(hasEvens([1,2,3]))
-
-
-
+//console.log(hasEvens([1,2,3]))
+//
+// function sumAll(num) {
+//     var sum = 0;
+//     for (var i = 0; i < num.length; i++) {
+//         sum += num[i]
+//     }
+//     return sum;
+// }
 
 </script>
 </body>
