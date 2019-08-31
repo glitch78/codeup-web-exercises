@@ -1,11 +1,9 @@
-body,
-html{
-    min-height: 100%;*/
-    font-family: "Comic Sans MS" "Sans-serif";
-
+body{
+    box-sizing:border-box;
+    background-color:#eee;
+    color:#222;
+    margin:0;
 }
-
-
 .center{
    text-align: center;
    color: purple;
@@ -66,7 +64,3 @@ td, tr {
     color:greenyellow;
 }
 
- table {
-     box-shadow:;
-     border-radius: ;
- }
