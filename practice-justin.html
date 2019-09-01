@@ -3,6 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        #join {
+            background-color: blue;
+            color: white;
+            text-align: center;
+            display: none;
+            padding: 15px 30px
+        }
+    </style>
 </head>
 <body>
 <script src="js/jquery.js"></script>
@@ -26,49 +35,91 @@
 <!--</ul>-->
 
 
-
 <h1 id="one">Practicing Dom Manipulation</h1>
-<p class="codeup">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consectetur dolorem et nihil officia omnis pariatur, quaerat sit. Adipisci distinctio dolorum id iste magni maiores nobis nulla pariatur quidem unde. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid amet culpa dolore doloremque eligendi error itaque laborum minima, molestias officia optio quas rerum vitae! Debitis dicta minima quos soluta veniam.</p>
+<p class="codeup">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consectetur dolorem et nihil
+    officia omnis pariatur, quaerat sit. Adipisci distinctio dolorum id iste magni maiores nobis nulla pariatur quidem
+    unde. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid amet culpa dolore doloremque eligendi error
+    itaque laborum minima, molestias officia optio quas rerum vitae! Debitis dicta minima quos soluta veniam.</p>
 
 <button id="button">Click Me</button>
 
-<ul id =" better">
+<ul id=" better">
     <li>Jamaica</li>
     <li>west Indies</li>
     <li>Greater Antilles</li>
     <li>Not the lesser Antilles</li>
 </ul>
 
-<div id ="codeup">
+<div id="codeup">
     <img src="img/beach-clear-water.jpg" alt="ocean" width="1000" height="1000">
+
+
+    <h2 id="join">Please Register for our site</h2>
+    <div>
+        <h1 id="newsletter">Would you like to sign up for our newsletter</h1>
+        <span id="disappear">X</span>
+    </div>
+
 </div>
+<h1 id="question">10 Frequently asked questions about national parks</h1>
+<dl id="dl-disappear">
+    <dt>How many employees are in the National Park Service?</dt>
+    <dd class="invisible">blah blah</dd>
+    <dt>What is the origin of the National Park Service arrowhead?</dt>
+    <dd class="invisible">blah blah</dd>
+    <dt>How old is the National Park System?</dt>
+    <dd class="invisible">blah blah</dd>
+    <dt>How many areas are in the National Park System?</dt>
+    <dd class="invisible">blah blah</dd>
+    <dt>Who is the director of the National Park Service?</dt>
+    <dd class="invisible">blah blah</dd>
+    <dt>How many people visit the national parks?</dt>
+    <dd class="invisible">blah blah</dd>
+    <dt>What is the most-visited national park?</dt>
+    <dd class="invisible">blah blah</dd>
+    <dt>What is the National Park Service budget?</dt>
+    <dd class="invisible">blah blah</dd>
+    <dt>How do I obtain a park entrance pass?</dt>
+    <dd class="invisible">blah blah</dd>
+    <dt>Where can I find a park map?</dt>
+    <dd class="invisible">blah blah</dd>
+
+</dl>
 
 <script>
 
     $(document).ready(function () {
-var contents = $("h1").html();
-alert(contents);
+// var contents = $("h1").html();
+// alert(contents);
 
-$("#button").click(function () {
-    $("#one").css("background-color", "yellow");
-    $("#codeup").hide();
+        $("#button").click(function () {
+            $("#one").css("background-color", "yellow");
+            $("#codeup").hide();
 
-});
+        });
 
-$("p").dblclick(function () {
-    $(this).css("font-size", "50px")
-});
+        $("p").dblclick(function () {
+            $(this).css("font-size", "50px")
+        });
 
-$("li").hover(
-    function () {
-     $(this).css("color", "red");
-    },
+        $("li").hover(
+            function () {
+                $(this).css("color", "red");
+            },
 
-    function () {
-       $(this).css("color", "black");
-    }
-)
+            function () {
+                $(this).css("color", "black");
+            }
+        );
 
+// $(".invisible").show();
+
+        $("#question").click(function () {
+            $(".invisible").toggle();
+        });
+        $("dt").click(function () {
+            $(this).css("background-color","yellow");
+        })
     });
 
     //practice with david
