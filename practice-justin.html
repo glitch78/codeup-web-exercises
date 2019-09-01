@@ -6,38 +6,81 @@
 </head>
 <body>
 <script src="js/jquery.js"></script>
-<ul>
-    <li>123</li>
-    <li>123</li>
-    <li>123</li>
-    <li>123</li>
-</ul>
-<ul>
-    <li>123</li>
-    <li>123</li>
-    <li>123</li>
-    <li>123</li>
-</ul>
-<ul>
-    <li>123</li>
-    <li>123</li>
-    <li>123</li>
-    <li>123</li>
-</ul>
+<!--<ul>-->
+<!--    <li>123</li>-->
+<!--    <li>123</li>-->
+<!--    <li>123</li>-->
+<!--    <li>123</li>-->
+<!--</ul>-->
+<!--<ul>-->
+<!--    <li>123</li>-->
+<!--    <li>123</li>-->
+<!--    <li>123</li>-->
+<!--    <li>123</li>-->
+<!--</ul>-->
+<!--<ul>-->
+<!--    <li>123</li>-->
+<!--    <li>123</li>-->
+<!--    <li>123</li>-->
+<!--    <li>123</li>-->
+<!--</ul>-->
+
+
+
+<h1 id="one">Practicing Dom Manipulation</h1>
+<p class="codeup">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consectetur dolorem et nihil officia omnis pariatur, quaerat sit. Adipisci distinctio dolorum id iste magni maiores nobis nulla pariatur quidem unde. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid amet culpa dolore doloremque eligendi error itaque laborum minima, molestias officia optio quas rerum vitae! Debitis dicta minima quos soluta veniam.</p>
 
 <button id="button">Click Me</button>
 
+<ul id =" better">
+    <li>Jamaica</li>
+    <li>west Indies</li>
+    <li>Greater Antilles</li>
+    <li>Not the lesser Antilles</li>
+</ul>
+
+<div id ="codeup">
+    <img src="img/beach-clear-water.jpg" alt="ocean" width="1000" height="1000">
+</div>
+
 <script>
 
-    $("#button").click(function () {
-       // $("ul").first().next().css("background-color","blue");
+    $(document).ready(function () {
+var contents = $("h1").html();
+alert(contents);
+
+$("#button").click(function () {
+    $("#one").css("background-color", "yellow");
+    $("#codeup").hide();
+
+});
+
+$("p").dblclick(function () {
+    $(this).css("font-size", "50px")
+});
+
+$("li").hover(
+    function () {
+     $(this).css("color", "red");
+    },
+
+    function () {
+       $(this).css("color", "black");
+    }
+)
 
     });
 
-var num = 555;
-    $("ul").each(function () {
-        $(this).append("<li>"+ num +"</li>" )
-    });
+    //practice with david
+    //     $("#button").click(function () {
+    //        // $("ul").first().next().css("background-color","blue");
+    //
+    //     });
+    //
+    // var num = 555;
+    //     $("ul").each(function () {
+    //         $(this).append("<li>"+ num +"</li>" )
+    //     });
 
     /*
     Write a function returnLowestNum that takes in three numbers and returns the lowest of all three.
@@ -50,84 +93,85 @@ var num = 555;
     // it should have 3 inputs
     //the data type should be a number
     //returns lowest the lowest number
-/*
-    function returnLowestNum(num1, num2, num3) {
-        // if num1 is less than num2 & num3 return num1
-        if(num1 < num2 && num1 < num3) {
-            return num1;
+    /*
+        function returnLowestNum(num1, num2, num3) {
+            // if num1 is less than num2 & num3 return num1
+            if(num1 < num2 && num1 < num3) {
+                return num1;
+            }
+
+            // if num2 is less than num1 & num3 return num2
+            else if (num2 < num1 && num2 < num3) {
+                return num2;
+            }
+            // else return num3
+
+            else {
+                return num3;
+            }
         }
+        console.log(returnLowestNum(2,3,1));
 
-        // if num2 is less than num1 & num3 return num2
-        else if (num2 < num1 && num2 < num3) {
-            return num2;
-        }
-        // else return num3
-
-        else {
-            return num3;
-        }
-    }
-    console.log(returnLowestNum(2,3,1));
-
- */
-/*
-Write a function containsC that returns true if the input contains the letter c and false otherwise.
-containsC(123) // false
-containsC("abc") // true
-containsC("c") // true
-containsC("123cajs") // true
+     */
+    /*
+    Write a function containsC that returns true if the input contains the letter c and false otherwise.
+    containsC(123) // false
+    containsC("abc") // true
+    containsC("c") // true
+    containsC("123cajs") // true
 
 
- */
+     */
 
-// write a function containsC
-//it should have one input
-// input should return true if it contains the letter c
-// otherwise return a boolean
+    // write a function containsC
+    //it should have one input
+    // input should return true if it contains the letter c
+    // otherwise return a boolean
+
+    //practice with vivian
+    //
+    // function containsC(input) {
+    //     //if input.indexOf(c) = a positive number, return true
+    //    if (input.indexOf("c")>=0) {
+    //        return true;
+    //    }
+    //
+    //     else {
+    //         return false;
+    //    }
+    // }
+
+    //console.log(containsC("at"));
 
 
-function containsC(input) {
-    //if input.indexOf(c) = a positive number, return true
-   if (input.indexOf("c")>=0) {
-       return true;
-   }
+    // Exercise 71
+    // Write a function definition named hasEvens that takes in sequence of numbers and returns true if there are any even numbers in the sequence
+    //1. write a function named has evens
+    //2 takes in an array of numbers
+    //3.returns true if even number in the array
 
-    else {
-        return false;
-   }
-}
+    // function hasEvens(arrayOfNumbers){
+    //     var returnValue;
+    //     arrayOfNumbers.forEach(function(num){
+    //         if(num % 2 === 0){
+    //             console.log(num);
+    //             returnValue = true;
+    //         }
+    //     });
+    //     return returnValue
+    // }
 
-//console.log(containsC("at"));
+    //
 
-
-// Exercise 71
-// Write a function definition named hasEvens that takes in sequence of numbers and returns true if there are any even numbers in the sequence
-//1. write a function named has evens
-//2 takes in an array of numbers
-//3.returns true if even number in the array
-
-// function hasEvens(arrayOfNumbers){
-//     var returnValue;
-//     arrayOfNumbers.forEach(function(num){
-//         if(num % 2 === 0){
-//             console.log(num);
-//             returnValue = true;
-//         }
-//     });
-//     return returnValue
-// }
-
-//
-
-//console.log(hasEvens([1,2,3]))
-//
-// function sumAll(num) {
-//     var sum = 0;
-//     for (var i = 0; i < num.length; i++) {
-//         sum += num[i]
-//     }
-//     return sum;
-// }
+    //console.log(hasEvens([1,2,3]))
+    //
+    // function sumAll(num) {
+    //     var sum = 0;
+    //     for (var i = 0; i < num.length; i++) {
+    //         sum += num[i]
+    //     }
+    //     return sum;
+    // }
 
 </script>
 </body>
