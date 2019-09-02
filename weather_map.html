@@ -8,106 +8,151 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
           integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <style>
+        .coordinates {
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            position: absolute;
+            bottom: 40px;
+            left: 10px;
+            padding: 5px 10px;
+            margin: 0;
+            font-size: 11px;
+            line-height: 18px;
+            border-radius: 3px;
+            display: none;
+        }
 
+        #map {
+            height: 600px;
+        }
+
+        .card-text, .card-title{
+            text-align: center;
+        }
     </style>
 </head>
 <body>
-<div class="container" >
-    <div class="card" style="background-color: skyblue">
-        <div class="card-header">
-            <H1>Weather Application</H1>
-            <h3>San Antonio</h3>
-        </div>
+    <div class="container">
+        <div class="card" style="background-color: skyblue">
+            <div class="card-header">
+                <H1>Weather Application</H1>
+                <h3 id="place"></h3>
+            </div>
         <div class="card-body">
-            <div class="card bg-light mb-3" style="max-width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Light card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                </div>
-
-                <div class="card bg-light mb-3" style="max-width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Light card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                    </div>
-
-                </div>
-                <div class="card bg-light mb-3" style="max-width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Light card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                    </div>
-                </div>
+            <div id="card-container" class="card bg-light mb-3 d-flex flex-row" style="max-width: 100%;">
             </div>
         </div>
-
-        &nbsp;
-
-        <div id="wrapper">
-
-            <div>
-                <!--        // script >
-                es here-->
-            </div>
-        </div>
-
-        <!--<script src="js/jquery.js"></script>-->
-        <script src="https://code.jquery.com/jquery-2.2.4.min.js"
-                integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-        <script src="js/keys.js"></script>
-        <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+    </div>
 
 
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-                integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-                crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-                integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-                crossorigin="anonymous"></script>
-
-        <script>
+    <div id='map'></div>
+    <pre id='coordinates' class='coordinates'></pre>
 
 
-            var lanceSky;
+    <!--<script src="js/jquery.js"></script>-->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="js/keys.js"></script>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
 
-            function dailyWeather() {
-                var displayContainer = "";
-                for (var i = 0; i <= 3; i++) {
-                    displayContainer += ""
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+            integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+            crossorigin="anonymous"></script>
+
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZ2xpdGNoNzgiLCJhIjoiY2p6aWhjdDJ1MTZ6ZjNsbzY0aXR3NmcxNCJ9.LqCJrOP_Lgpz1QmGvbA7rQ';
+
+        function getPlace(longitude, latitude) {
+            $.get("https://api.mapbox.com/geocoding/v5/mapbox.places/" + longitude + "," + latitude + ".json?access_token=" + mapboxgl.accessToken).done(function (data) {
+                $("#place").html(data.features[2].place_name)
+            })
+        }
+
+       //creates map
+
+        var coordinates = document.getElementById('coordinates');
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [0, 0],
+            zoom: 2
+        });
+        var marker = new mapboxgl.Marker({
+            draggable: true
+        })
+            .setLngLat([-98.4916, 29.4260])
+            .addTo(map);
+        function onDragEnd() {
+            var lngLat = marker.getLngLat();
+            coordinates.style.display = 'block';
+            coordinates.innerHTML = 'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
+            getForcast(lngLat.lat, lngLat.lng);
+            getPlace(lngLat.lng, lngLat.lat);
+        }
+        marker.on('dragend', onDragEnd);
+
+        //creates html for individual cards
+        function createCard(info) {
+            var icons = {
+                "clear-day": "icon/climacons-master/SVG/Sun.svg",
+                "clear-night": "icon/climacons-master/SVG/Moon.svg",
+                "rain": "icon/climacons-master/SVG/Cloud-Rain.svg",
+                "snow": "icon/climacons-master/SVG/Snowflake.svg",
+                "sleet": "icon/climacons-master/SVG/Cloud-Hail-Sun-Alt.svg",
+                "wind": "icon/climacons-master/SVG/Cloud-Wind.svg",
+                "fog": "icon/climacons-master/SVG/Cloud-Fog-Sun.svg",
+                "cloudy": "icon/climacons-master/SVG/Cloud.svg",
+                "partly-cloudy-day": "icon/climacons-master/SVG/Cloud-Sun.svg",
+                "partly-cloudy-night": "icon/climacons-master/SVG/Cloud-Moon.svg"
+            };
+            var icon = '<img src =" ' + icons[info.icon] + '"/>';
+            var card = '<div class="card-body card bg-light mb-3" style= "width: 250px; height: 350px;"> ';
+            var temp = ' <h5 id="card1-temp" class="card-title" >' + info.highTemperature + '&deg;/' + info.lowTemperature + '&deg;</h5>';
+            var pressure = '<p class="card-text">' + "Pressure: "+ info.pressure + '</p>';
+            var wind = '<p class="card-text">' + "Wind: " + info.wind + '</p>';
+            var humidity = '<p class="card-text">' +"Humidity: " + info.humidity + '</p>';
+            var summary = '<p class="card-text">' + info.summary + '</p>';
+            return card + temp + icon + summary + pressure + wind + humidity + '</div>';
+        }
+        function getForcast(latitude, longitude) {
+            $("#card-container").html(" ");
+            $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/" + latitude + "," + longitude).done(function (data) {
+                var dateObject = new Date(1551736889 * 1000);
+                var dates = data.daily.data;
+                $("#card1-temp").html(data.currently.temperature);
+                for (var i = 0; i < 3; i++) {
+                    var seconds = dates[i].time;
+                    var newDate = new Date(seconds * 1000);
+                    var highTemperature = Math.round(dates[i].temperatureHigh);
+                    var lowTemperature = Math.round(dates[i].temperatureLow);
+                    var preciptype = dates[i].precipType;
+                    var humidity = dates[i].humidity;
+                    var pressure = dates[i].pressure;
+                    var wind = dates[i].windSpeed;
+                    var icon = dates[i].icon;
+                    var info = {
+                        "summary": dates[i].summary,
+                        "icon": icon,
+                        "highTemperature": highTemperature,
+                        "lowTemperature": lowTemperature,
+                        "precipType": preciptype,
+                        "humidity": humidity,
+                        "pressure": pressure,
+                        "wind": wind,
+                        "date": newDate
+                    };
+                    $("#card-container").append(createCard(info));
                 }
-            }
-
-            $(document).ready(function () {
-
-                $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/29.4241,-98.4936").done(function (data) {
-                    console.log(data);
-                    console.log(data.daily);
-
-                });
-
-
             });
-
-            // function buildHTML(tools) {
-            //     var productsHTML = "test";
-            //     console.log(tools);
-            //     tools.forEach(function (tool) {
-            //         productsHTML += "<tr>";
-            //         productsHTML += "<td>" + tool.title + "</td>";
-            //         productsHTML += "<td>" + tool.quantity + "</td>";
-            //         productsHTML += "<td>" + tool.price + "</td>";
-            //         productsHTML += "<td>" + tool.categories + "</td>";
-            //         productsHTML += "</tr>";
-            //     });
-            //     $("#insertProducts").html(productsHTML);
-            // }
-            // })();
-
-        </script>
-
-
+        }
+        $(document).ready(function () {
+            getForcast(29.4260, -98.4916);
+            getPlace(-98.4916, 29.4260);
+        });
+    </script>
 </body>
 </html>
