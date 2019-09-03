@@ -28,6 +28,8 @@
 
         .card-text, .card-title{
             text-align: center;
+            color: white;
+            background: darkblue;
         }
     </style>
 </head>
@@ -68,7 +70,8 @@
 
         function getPlace(longitude, latitude) {
             $.get("https://api.mapbox.com/geocoding/v5/mapbox.places/" + longitude + "," + latitude + ".json?access_token=" + mapboxgl.accessToken).done(function (data) {
-                $("#place").html(data.features[2].place_name)
+                $("#place").html(data.features[2].place_name);
+
             })
         }
 
@@ -79,7 +82,7 @@
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v11',
             center: [0, 0],
-            zoom: 2
+            zoom: 1
         });
         var marker = new mapboxgl.Marker({
             draggable: true

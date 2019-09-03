@@ -85,41 +85,46 @@
     <dd class="invisible">blah blah</dd>
 
 </dl>
+<!--National parks exercise-->
 
+<h3 id="zion">Zion National Park</h3>
+<ul id="zion-bold">
+    <li>Has 2,000 foot sandstone cliffs</li>
+    <li>Guided horseback trips are available</li>
+    <li>In summer, temperatures in Zion National Park can exceed 100°F</li>
+    <li>Winters in Zion National Park are often cold and regularly wet</li>
+</ul>
+<h3 id="olympic">OLYMPIC NATIONAL PARK</h3>
+<ul id="olympic-bold">
+    <li>Earned the designation of national park in 1938.</li>
+    <li>IT'S HOME TO ONE OF THE FEW TEMPERATE RAIN FORESTS IN THE WORLD.</li>
+    <li>UNUSUAL WEATHER SPARKED A RAIN FOREST FIRE IN 2015.</li>
+    <li>HURRICANE RIDGE IS A POPULAR DESTINATION YEAR-ROUND.</li>
+
+</ul>
+
+
+<h3 id="harpers">HARPERS FERRY NATIONAL HISTORICAL PARK</h3>
+<ul id="harpers-bold">
+    <li>Harpers Ferry National Historical Park has land in three states including West Virginia, Maryland, and
+        Virginia.
+    </li>
+    <li>Outdoor activities for visitors to the park include white water rafting, boating, fishing, canoeing, hiking, and
+        sightseeing.
+    </li>
+    <li>The park serves as a growing region for many rare plant species due to its position where the two rivers meet.
+    </li>
+    <li>Robert Harper's original home is still standing. It is located in the park's lower region and is the oldest
+        building in the park today.
+    </li>
+</ul>
+
+<button id="li-highlight">Click Here</button>
 <script>
 
     $(document).ready(function () {
-// var contents = $("h1").html();
-// alert(contents);
-
-        $("#button").click(function () {
-            $("#one").css("background-color", "yellow");
-            $("#codeup").hide();
-
-        });
-
-        $("p").dblclick(function () {
-            $(this).css("font-size", "50px")
-        });
-
-        $("li").hover(
-            function () {
-                $(this).css("color", "red");
-            },
-
-            function () {
-                $(this).css("color", "black");
-            }
-        );
-
-// $(".invisible").show();
-
-        $("#question").click(function () {
-            $(".invisible").toggle();
-        });
-        $("dt").click(function () {
-            $(this).css("background-color","yellow");
-        })
+        $("li").css("font-size", "20px");
+    $("li, p, h1").css("background-color", "yellow")
     });
 
     //practice with david
