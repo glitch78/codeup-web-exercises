@@ -12,14 +12,14 @@
 
 
 const wait = (ms) => {
-    const myPromise = new Promise((resolve, reject) => {
+    return  new Promise((resolve, reject) => {
         setTimeout(function () {
             resolve()
         },ms)
 
     });
 
-    return myPromise;
+    // return myPromise;
 };
 
 wait(1000).then(() => console.log('You\'ll see this after 1 second'));
